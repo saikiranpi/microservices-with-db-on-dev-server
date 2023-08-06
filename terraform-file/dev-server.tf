@@ -13,7 +13,7 @@ resource "aws_launch_template" "PetclinicServerLT" {
   instance_type = var.instance_type
   key_name = var.mykey
   vpc_security_group_ids = [aws_security_group.dev-server-sg.id]
-  user_data = filebase64("petclinicserver-userdata.sh")
+  user_data = filebase64("development-server-userdata.sh")
 }
 
 resource "aws_instance" "PetclinicServer" {
